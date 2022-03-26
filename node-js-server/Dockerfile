@@ -10,7 +10,7 @@ RUN npm run build -- --outputPath=./dist/out --configuration $configuration
 
 ### STAGE 2: Run ###
 FROM nginx:alpine
-#COPY --from=build /usr/src/app/dist/out/ /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/out/ /usr/share/nginx/html
 #COPY /nginx-custom.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
